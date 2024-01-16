@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+  background-color: #121212;
+  font-family: "Source Code Pro", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+    position: relative;
+    width: 15rem;
+    color: #fff;
+    padding: 1.5rem;
+    background-color: #202022;
+    transition: all 150ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    transform: rotate(-5deg);
+    cursor: pointer;
+}
+.date {
+    color: #FE7A36;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+.description {
+    font-size: 0.9rem;
+}
+.card:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+  
