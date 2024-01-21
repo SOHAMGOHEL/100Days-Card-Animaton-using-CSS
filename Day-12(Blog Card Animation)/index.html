@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-12 Blog Card Animation @Code.With.Rocky</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="video-container">
+            <!-- Add Video Path -->
+            <video src="" id="video"></video>
+        </div>
+        <div class="blog-content">
+            <div class="tag">
+                <a href="http://">car</a>
+                <a href="http://">Car Drift</a>
+            </div>
+            <div class="title">Car Drift Video the taken From Pexels</div>
+            <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore commodi cum dolor expedita ea fugiat veritatis laborum, sed beatae ratione esse, at, deleniti a porro nesciunt aspernatur..<b>readmore</b></div>
+        </div>
+    </div>
+<script>
+    const video = document.getElementById("video");
+    video.addEventListener("click", function () {
+        video.paused ? video.play() : video.pause();
+    });
+</script>
+   
+</body>
+</html>
