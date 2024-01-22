@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: #333844;
+    color: #FFF;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} 
+.card{
+    width: 300px;
+    aspect-ratio: 9/12;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 8px;
+}
+.card img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    z-index: 0;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card:hover img{
+    transform: scale(1.1);
+}
+.card::before,
+.card::after{
+    content: '';
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card::after{
+    transition-delay: 0.3s;
+    top: 50%;
+}
+.card:hover::before
+,.card:hover::after{
+    transform: scaleX(1);
+}
+.text{
+    position: absolute;
+    inset: 20px;
+    top: auto;
+    z-index: 2;
+}
+h2{
+    font-size: 30px;
+    font-size: clamp(20px,4vw,40px);
+    font-weight: 800;
+    margin-bottom: 0.2em;
+}
+p{
+    font-size: 12px;
+    font-size: clamp(10px,1.25vw,14px);
+    line-height: 1.4;
+    text-align: justify;
+    margin-top: 0.2em;
+    margin-bottom: 0;
+}
+h2 .char,p .word{
+    opacity: 0;
+    position: relative;
+}
+.card:hover h2 .char,.card:hover p .word{
+    opacity: 1;
+    transform: translateY(0);
+}
+.card:hover h2 .char{
+    transition-delay: calc(0.1s + var(--char-index) * 0.05s);
+}
+.card:hover p .word{
+    transition-delay: calc(0.1s + var(--word-index) * 0.020s);
+}
+.container:hover .card:not(:hover ) img{
+    filter: brightness(0.5) blur(5px);
+}
